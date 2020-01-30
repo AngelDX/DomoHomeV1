@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="resources/favicon.ico">
+
+    <title>CasaInteligente</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="resources/distbootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/distsemantic/semantic.css" rel="stylesheet" >
+    <link href="resources/slider/range.css" rel="stylesheet" >
+
+    <script src="resources/jquery/jquery.js"></script>
+    <script src="resources/distbootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/distbootstrap/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="resources/distbootstrap/ie10-viewport-bug-workaround.js"></script>
+    <script src="resources/jquery/jquery.validate.min.js"></script>
+
+    <script src="resources/distsemantic/semantic.js"></script>
+    <script src="resources/slider/range.js"></script>
+
+    <link href="resources/css/sistema.css" rel="stylesheet">
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+  <div id="contenedor">
+    <div class="navbar-wrapper amnu">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">CasaInteligente</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">Opción1</a></li>
+                <li><a href="#contact">Opción2</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </div>
+
+	<div id="contenido">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Control Alarma</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="field">
+                  <div class="ui toggle checkbox" id="btna">
+                    <input type="radio" name="alarma" id="ctrA">
+                    <label>Activar/desactivar Alarma</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <!--<img src="" width="70px" alt=""> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Control luces</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="field">
+                  <div class="ui toggle checkbox" id="btn1">
+                    <input type="radio" name="radio1" id="ctr1">
+                    <label>Luz Dormitorio</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui toggle checkbox" id="btn2">
+                    <input type="radio" name="radio2" id="ctr2">
+                    <label>Luz Sala</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="field">
+                  <div class="ui toggle checkbox" id="btn3">
+                    <input type="radio" name="radio3" id="ctr3">
+                    <label>Luz Cocina</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui toggle checkbox" id="btn4">
+                    <input type="radio" name="radio4" id="ctr4">
+                    <label>Luz Baño</label>
+                  </div>
+                </div><br/>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-8"><div class="ui green range" id="range-green"></div></div>
+              <div class="col-sm-4"><label>Luz Variable</label></div>
+              <div class="col-sm-12">Valor: <span id="display-1"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Datos Informativos</h3>
+          </div>
+          <div class="panel-body">
+            <div id="data"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+   
+	<footer style="background-color:#000000;color:#FFFFFF;padding:10px 10px 10px 10px;border-radius: 6px;">
+	  <p class="pull-right"><a href="#">Back to top</a></p>
+	  <p>&copy; Angel Rosendo Condori Coaquira. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
+</div><!-- /contenedor -->
+<script src="resources/highcharts/js/highcharts.js"></script>
+<script src="resources/highcharts/js/modules/exporting.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#estadisticas').load('graficos.html');
+    $('.ui.checkbox').checkbox();
+    $('#btn1').change(function(event) {
+      if($('#ctr1').is(':checked')){
+        $.get("http://192.168.1.121",{LED1:'T'});
+      }else{
+        $.get("http://192.168.1.121",{LED1:'F'});
+      }
+    });
+    $('#btn2').change(function(event) {
+      if($('#ctr2').is(':checked')){
+        $.get("http://192.168.1.121",{LED2:'T'});
+      }else{
+        $.get("http://192.168.1.121",{LED2:'F'});
+      }
+    });
+    $('#btn3').change(function(event) {
+      if($('#ctr3').is(':checked')){
+        $.get("http://192.168.1.121",{LED3:'T'});
+      }else{
+        $.get("http://192.168.1.121",{LED3:'F'});
+      }
+    });
+    $('#btna').change(function(event) {
+      if($('#ctrA').is(':checked')){
+        $.get("http://192.168.1.121",{ALAR:'T'});
+      }else{
+        $.get("http://192.168.1.121",{ALAR:'F'});
+      }
+    });
+
+    $('#range-green').range({
+      min: 0,
+      max: 9,
+      start: 0,
+      onChange: function(value) {
+        $.get("http://192.168.1.121",{VAR1:value});
+        $('#display-1').html(value);
+      }
+    });
+
+    function refrescar(){
+        $('#data').load('sensores.html', function(){
+          console.log('Procesando...');
+        });
+    }
+    setInterval(refrescar, 1000);
+  });
+</script>

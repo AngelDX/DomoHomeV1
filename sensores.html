@@ -1,0 +1,30 @@
+<body>
+	<div>
+		<h3 align="center"><span id="fecha"></span></h3>
+		<h3 align="center">Hora: <span id="hora"></span></h3>
+		<h3 align="center" style="color:red">Temperatura: <span id="tempVal"></span> °C</h3>
+		<h3 align="center" style="color:blue">Estado Alarma: <span id="estAlarma"></span></h3>
+		<h3 align="center" style="color:green">Sensor Alarma: <span id="estSensor"></span></h3>
+		<h3 align="center" style="color:magenta">Valor Alarma: <span id="valSensor"></span></h3>
+	</div>
+</body>
+<script type="text/javascript">
+	$.getJSON("http://192.168.1.121", function(json) {
+		  //console.log( "JSON Data: " + json.temperatura);
+		  $("#tempVal").text(json.temperatura);
+		  $("#uptimeVal").text(json.uptime);
+		  $("#estAlarma").text(json.estadoAlarma);
+		  $("#estSensor").text(json.sensorAlarma);
+		  $("#valSensor").text(json.valSensor);
+	});
+
+	var fecha = new Date();
+	var dia_semana = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+	var mes = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+	var dame_fecha =dia_semana[fecha.getDay()] + ", " + fecha.getDate() + " de " + mes[fecha.getMonth()] + " del " + fecha.getFullYear();
+	$('#fecha').html(dame_fecha);
+	var hora = new Date();
+	var dame_hora = hora.getHours() + ":" + hora.getMinutes() + ":" + hora.getSeconds();
+	$('#hora').html(dame_hora);
+
+</script>
